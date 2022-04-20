@@ -1,0 +1,16 @@
+{
+      "nav": {
+        "news": "News",
+        "lang": "Language",
+        "settings": "settings",
+        "light": "Light Mode",
+        "dark1": "Dark Mode",
+        "dark2": "Dark Mode (2)"
+      },
+    "home":{
+        "search": "Search News"
+    },
+    "det":{
+        "link": "Link to article"
+    }
+    }
