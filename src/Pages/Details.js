@@ -2,8 +2,9 @@ import React, {useState,useEffect,useContext} from "react";
 import"../styles/Details.css"
 import Axios from "axios";
 import { NewsContext } from "../Context/NewsContext";
-
+import { useTranslation } from "react-i18next";
 function Details() {
+  const { t} = useTranslation();
     const [news, setNews]= useState([]);
     const {number}= useContext(NewsContext);
     useEffect( ()=>{
@@ -20,7 +21,7 @@ return(
   <p className="pub">Publish Date: {news.publishedAt}</p>
   <img src={news.urlToImage} alt={news.title}/>
  <p className="content">{news.content}</p>
- <a  target="_blank" rel="noreferrer" href={news.url}>Link to article</a>
+ <a  target="_blank" rel="noreferrer" href={news.url}>{t("det.link")} </a>
   </div>
 
 
