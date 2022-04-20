@@ -1,0 +1,43 @@
+#details{
+
+   margin-top: 40px;
+   margin-left: 20px;
+}
+
+#details img{
+   
+    width: 40%;
+    height: 40%;
+    margin-bottom: 10px;
+    min-width: 600px;
+}
+
+.title{
+    font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 700;
+font-size: 35px;
+line-height: 40px;
+letter-spacing: -0.478386px;
+width: 50%;
+}
+.pub{
+    font-family: 'Ubuntu';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 8px;
+letter-spacing: -0.160908px;
+color: #515151;
+}
+.content{
+    width: 40%;
+   
+font-family: 'Barlow';
+font-style: normal;
+font-weight: 500;
+font-size: 17px;
+line-height: 130%;
+color: #1D1D1D;
+margin-bottom: 5px;
+}
