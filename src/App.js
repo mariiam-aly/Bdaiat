@@ -8,7 +8,7 @@ import { NewsContext } from "./Context/NewsContext";
 import{ModeContext} from  "./Context/ModeContext";
 import { LangContext } from "./Context/LangContext";
 function App() {
-   const [number,setNumber] =useState(0);
+   const [num,setNumber] =useState(0);
    const [mode,setMode] =useState("");
    const [language, SetLanguage]=useState(true);
 
@@ -33,7 +33,7 @@ return(
   <ModeContext.Provider value={{mode,setMode}}>
 <Nav/>
 </ModeContext.Provider>
-<NewsContext.Provider value={{number,setNumber}}>
+<NewsContext.Provider value={{num,setNumber}}>
 <Route exact path="/" component={Home} />
 <Route exact path="/det" component={Details} />
 </NewsContext.Provider>
