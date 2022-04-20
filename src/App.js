@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import './App.scss'
 import {Route} from"react-router-dom"
 import Nav from "./Components/Nav";
@@ -10,10 +10,26 @@ import { LangContext } from "./Context/LangContext";
 function App() {
    const [number,setNumber] =useState(0);
    const [mode,setMode] =useState("");
-   const [Language, SetLanguage]=useState(true);
+   const [language, SetLanguage]=useState(true);
+
+   useEffect(()=>{
+
+    const data= window.localStorage.getItem('MODE');
+    console.log(data);
+    if (data!==null){ setMode(JSON.parse(data));
+    
+   }
+   },[]);
+
+  useEffect(()=>{
+
+    window.localStorage.setItem('MODE',JSON.stringify(mode))
+    
+  },[mode]);
+
 return(
   <div className={mode}>
-  <LangContext.Provider value={{Language, SetLanguage}}>
+  <LangContext.Provider value={{language, SetLanguage}}>
   <ModeContext.Provider value={{mode,setMode}}>
 <Nav/>
 </ModeContext.Provider>
