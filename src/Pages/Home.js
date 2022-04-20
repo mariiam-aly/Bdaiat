@@ -8,7 +8,7 @@ import { LangContext } from "../Context/LangContext";
 function Home() {
   const { t} = useTranslation();
     const [news, setNews]= useState([]);
-    const {lang}= useContext(LangContext);
+    const {language}= useContext(LangContext);
 const [searchTerm,SetSearchTerm]=useState('');
     useEffect( ()=>{
         const getNews =async()=>{
@@ -17,10 +17,13 @@ const [searchTerm,SetSearchTerm]=useState('');
     console.log(response.data.articles)};
         getNews();
     },[])
+
+
+    
 return(
   <div id="main">
   <div id="top" >
-  <AiOutlineSearch  className={lang? "srch":"srch srchar"}/>
+  <AiOutlineSearch  className={language? "srch":"srch srchar"}/>
   <input className="search" type="text" placeholder={t("home.search")} onChange={(e)=>SetSearchTerm(e.target.value)}/></div>
   <div style={{marginTop:"40px"}} className="container ">
   <div className="row gy-5">
