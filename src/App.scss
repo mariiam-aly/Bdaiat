@@ -1,0 +1,91 @@
+.App {
+  width: 100%;
+ 
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark{
+  background-color: #222;
+  min-height: 100vh;
+.navBar{
+background-color:black ;
+  }
+.icon{
+  color: #BC6FF1;
+}
+select{
+  background-color: #bdbdbd;
+  color: #52057B;
+}
+.search{
+  background: #bdbdbd;
+}
+.srch{
+  color: #52057B;
+}
+.cardTitle{
+  background: #52057B;
+
+color: white;}
+.cardTitle:hover{
+  background: #4b0670;
+}
+.title{
+  color: #BC6FF1;}
+
+.pub{
+  color: #d3d1d1;
+}
+.content{
+
+  color: #d3d1d1;
+}}
+
+.dark2{
+  background-color: #222;
+  min-height: 100vh;
+.navBar{
+background-color:#102A43 ;
+  }
+.icon{
+  color: #BEF992;
+}
+select{
+  background-color: #627d98;
+  color: #BEF992;
+}
+.search{
+  background:  #627d98;
+}
+.search::placeholder{
+  color: #222;
+}
+.srch{
+  color: #BEF992;
+}
+.cardTitle{
+  background: #102A43 ;
+
+color: #cfcfcf;}
+.cardTitle:hover{
+  background: #0c2134;
+}
+.title{
+  color: #BEF992;}
+
+.pub{
+  color: #d3d1d1;
+}
+.content{
+
+  color: #d3d1d1;
+}
+}
+
+
+body {
+  padding: 0;
+  margin: 0;
+}
