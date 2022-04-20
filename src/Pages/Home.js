@@ -3,7 +3,9 @@ import"../styles/Home.css"
 import Axios from "axios";
 import NewsCard from "../Components/NewsCard";
 import { AiOutlineSearch } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
 function Home() {
+  const { t} = useTranslation();
     const [news, setNews]= useState([]);
 const [searchTerm,SetSearchTerm]=useState('');
     useEffect( ()=>{
@@ -17,7 +19,7 @@ return(
   <div id="main">
   <div id="top" >
   <AiOutlineSearch className="srch"/>
-  <input className="search" type="text" placeholder="Search News" onChange={(e)=>SetSearchTerm(e.target.value)}/></div>
+  <input className="search" type="text" placeholder={t("home.search")} onChange={(e)=>SetSearchTerm(e.target.value)}/></div>
   <div style={{marginTop:"40px"}} className="container ">
   <div className="row gy-5">
   {news && news.filter((data)=>{
