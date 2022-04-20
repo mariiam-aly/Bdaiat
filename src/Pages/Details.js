@@ -6,32 +6,19 @@ import { useTranslation } from "react-i18next";
 function Details() {
   const { t} = useTranslation();
     const [news, setNews]= useState([]);
-    const {number, setNumber}= useContext(NewsContext);
+    const {num,setNumber}= useContext(NewsContext);
     useEffect( ()=>{
         const getNews =async()=>{
         const response= await Axios.get("https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=152fe400cfec431b8701339385b28ec0");
-        setNews(response.data.articles[number]);
+        setNews(response.data.articles[num]);
         
   };
 
         getNews();
-    },[number])
-    useEffect(()=>{
+    },[num])
 
-      const data= window.localStorage.getItem('NEWS');
+
   
-      if (data!==null){ setNumber(JSON.parse(data));
-      
-     }
-     },[]);
-
-
-    useEffect(()=>{
-
-      window.localStorage.setItem('NEWS',JSON.stringify(number))
-      
-    },[number]);
-
 return(
   <div id="details">
   <p className="title"> {news.author}: {news.title}</p>
