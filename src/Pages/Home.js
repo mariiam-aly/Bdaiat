@@ -1,12 +1,14 @@
-import React, {useState,useEffect} from "react"; 
+import React, {useState,useEffect,useContext} from "react"; 
 import"../styles/Home.css"
 import Axios from "axios";
 import NewsCard from "../Components/NewsCard";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useTranslation } from "react-i18next";
+import { LangContext } from "../Context/LangContext";
 function Home() {
   const { t} = useTranslation();
     const [news, setNews]= useState([]);
+    const {lang}= useContext(LangContext);
 const [searchTerm,SetSearchTerm]=useState('');
     useEffect( ()=>{
         const getNews =async()=>{
@@ -18,7 +20,7 @@ const [searchTerm,SetSearchTerm]=useState('');
 return(
   <div id="main">
   <div id="top" >
-  <AiOutlineSearch className="srch"/>
+  <AiOutlineSearch  className={lang? "srch":"srch srchar"}/>
   <input className="search" type="text" placeholder={t("home.search")} onChange={(e)=>SetSearchTerm(e.target.value)}/></div>
   <div style={{marginTop:"40px"}} className="container ">
   <div className="row gy-5">
