@@ -1,0 +1,25 @@
+#main{
+margin-top: 100px;
+}
+
+#top{
+    position: relative;
+  padding-left: 30px;
+}
+.search{
+   
+    background: #F4F2FF;
+border-radius: 5.89761px;
+border: none;
+padding: 10px;
+padding-left: 25px;
+width: 300px;
+
+}
+
+.srch{
+    color: rgb(124, 167, 232);
+    position: absolute; 
+    bottom: 11px;
+    left:35px;
+}
