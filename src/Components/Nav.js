@@ -1,14 +1,16 @@
-import React from "react"; 
+import React,{useContext} from "react"; 
 import"../styles/Nav.css"
-import { AiOutlineSearch } from "react-icons/ai";
+import { ModeContext } from "../Context/ModeContext";
+
 function Nav() {
-    
+  const {setMode}= useContext(ModeContext);
 return(
-  <div id="nav">
-<h id="icon">NewsFeed</h>
-<div style={{position:"relative"}}>
-<AiOutlineSearch id="srch"/>
-<input id="search" type="text" placeholder="Search News"/></div>
+  <div className="navBar">
+<p className="icon">NewsFeed</p>
+<select name="modes" id="modes" onChange={(e)=>setMode(e.target.value)}>
+<option value="light">Light</option>
+<option value="dark">Dark 1</option>
+<option value="dark2">Dark 2</option> </select>
 
   </div>
 
