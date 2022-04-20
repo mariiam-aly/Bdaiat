@@ -26,7 +26,7 @@ function Nav() {
       setLangSwitch(JSON.parse(data));
     
    }
-   },[]);
+   },[i18n]);
 
 
   useEffect(()=>{
