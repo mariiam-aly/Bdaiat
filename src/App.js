@@ -6,11 +6,14 @@ import Home from "./Pages/Home";
 import Details from "./Pages/Details";
 import { NewsContext } from "./Context/NewsContext";
 import{ModeContext} from  "./Context/ModeContext";
+import { LangContext } from "./Context/LangContext";
 function App() {
    const [number,setNumber] =useState(0);
    const [mode,setMode] =useState("");
+   const [Language, SetLanguage]=useState(true);
 return(
   <div className={mode}>
+  <LangContext.Provider value={{Language, SetLanguage}}>
   <ModeContext.Provider value={{mode,setMode}}>
 <Nav/>
 </ModeContext.Provider>
@@ -18,6 +21,7 @@ return(
 <Route exact path="/" component={Home} />
 <Route exact path="/det" component={Details} />
 </NewsContext.Provider>
+</LangContext.Provider>
   </div>
 
 
