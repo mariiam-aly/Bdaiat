@@ -15,11 +15,11 @@ function Details() {
   };
 
         getNews();
-    },[])
+    },[number])
     useEffect(()=>{
 
       const data= window.localStorage.getItem('NEWS');
-      console.log(data);
+  
       if (data!==null){ setNumber(JSON.parse(data));
       
      }
@@ -30,7 +30,7 @@ function Details() {
 
       window.localStorage.setItem('NEWS',JSON.stringify(number))
       
-    },[news]);
+    },[number]);
 
 return(
   <div id="details">
