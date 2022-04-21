@@ -8,7 +8,7 @@ import { NewsContext } from "./Context/NewsContext";
 import{ModeContext} from  "./Context/ModeContext";
 import { LangContext } from "./Context/LangContext";
 function App() {
-   const [num,setNumber] =useState(0);
+   const [num,setNumber] =useState({ });
    const [mode,setMode] =useState("");
    const [language, SetLanguage]=useState(true);
 
