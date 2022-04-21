@@ -8,16 +8,32 @@ import { LangContext } from "../Context/LangContext";
 function Home() {
   const { t} = useTranslation();
     const [news, setNews]= useState([]);
-    const {language}= useContext(LangContext);
+    const {language,SetLanguage}= useContext(LangContext);
 const [searchTerm,SetSearchTerm]=useState('');
     useEffect( ()=>{
         const getNews =async()=>{
         const response= await Axios.get("https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=152fe400cfec431b8701339385b28ec0");
         setNews(response.data.articles);
-    console.log(response.data.articles)};
+  };
         getNews();
     },[])
+    useEffect(()=>{
 
+      const data= window.localStorage.getItem('SWITCH_SIDE');
+
+      if (data!==null){
+        
+        SetLanguage(JSON.parse(data));
+       
+     }
+     },[SetLanguage ]);
+  
+  
+    useEffect(()=>{
+  
+      window.localStorage.setItem('SWITCH_SIDE',JSON.stringify(language))
+   
+    },[language]);
 
     
 return(
@@ -36,7 +52,7 @@ return data;
    }
  }).map((data,key) =>
 
-  <NewsCard index={key} key={key} image={data.urlToImage} title={data.title}/>
+  <NewsCard index={key} key={key} image={data.urlToImage} title={data.title} content={data.content} author={data.author} url={data.url} time={data.publishedAt}/>
   
 )}
 
