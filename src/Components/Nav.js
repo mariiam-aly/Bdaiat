@@ -8,12 +8,14 @@ function Nav() {
   const {mode,setMode}= useContext(ModeContext);
   const {SetLanguage}= useContext(LangContext);
   const [langSwitch, setLangSwitch]= useState("");
+  const [side, setSide]= useState("ltr");
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (language,x,l) => {
     i18n.changeLanguage(language);
     setLangSwitch(language);
   document.getElementById("root").style.direction=x;
+  setSide(x);
   SetLanguage(l);
   };
 
@@ -37,6 +39,25 @@ function Nav() {
 
   useEffect(()=>{
 
+    const data= window.localStorage.getItem('SIDE');
+
+    if (data!==null){
+      
+      setSide(JSON.parse(data));
+      document.getElementById("root").style.direction=JSON.parse(data);
+   }
+   },[ ]);
+
+
+  useEffect(()=>{
+
+    window.localStorage.setItem('SIDE',JSON.stringify(side))
+ 
+  },[side]);
+
+
+  useEffect(()=>{
+
     const data= window.localStorage.getItem('MODE');
 
     if (data!==null){
@@ -44,7 +65,7 @@ function Nav() {
       setMode(JSON.parse(data));
     
    }
-   },[]);
+   },[setMode]);
 
 
   useEffect(()=>{
